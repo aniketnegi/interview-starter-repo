@@ -10,6 +10,6 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
 ) {
-  const randomUUID = crypto.randomUUID()
-  res.status(200).json({ jobId: randomUUID.toString() })
+  const UUID = randomUUID()
+  res.status(200).json({ jobId: UUID })
 }
