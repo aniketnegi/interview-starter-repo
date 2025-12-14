@@ -2,14 +2,14 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { randomUUID } from 'crypto'
 
 
-type ResponseData = {
-  jobId: string
+export async function GET() {
+  return Response.json({
+    jobId: randomUUID(),
+  })
 }
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
-) {
-  const UUID = randomUUID()
-  res.status(200).json({ jobId: UUID })
+export async function POST() {
+  return Response.json({
+    jobId: randomUUID(),
+  })
 }
